@@ -1,11 +1,12 @@
 <?php
 /*
 Plugin Name: Subscribe To Comments
-Version: 2.3
+Version: 2.3.1
 Plugin URI: http://txfx.net/wordpress-plugins/subscribe-to-comments/
 Description: Allows readers to choose to receive notifications of new comments that are posted to an entry.
 Author: Mark Jaquith
-Author URI: http://coveredwebservices.com/
+Author URI: http://coveredweb.com/
+License: GPLv2 or later
 */
 
 
@@ -1467,7 +1468,7 @@ if ( !isset( $_REQUEST['showallsubscribers'] ) || !$_REQUEST['showallsubscribers
 	<p><a href="<?php echo esc_url( esc_attr( add_query_arg( 'showallsubscribers', '1', _stc()->form_action ) ) ); ?>"><?php _e( 'Show all subscribers',
 'subscribe-to-comments' ); ?></a></p>
 <?php elseif ( !isset( $_REQUEST['showccfield'] ) || !$_REQUEST['showccfield'] ) : ?>
-	<p><a href="<?php echo add_query_arg( 'showccfield', '1' ); ?>"><?php _e( 'Show list of subscribers in <code>CC:</code>-field format (for bulk e-mailing)', 'subscribe-to-comments' ); ?></a></p>
+	<p><a href="<?php echo esc_url( add_query_arg( 'showccfield', '1' ) ); ?>"><?php _e( 'Show list of subscribers in <code>CC:</code>-field format (for bulk e-mailing)', 'subscribe-to-comments' ); ?></a></p>
 <?php else : ?>
 	<p><a href="<?php echo esc_url( _stc()->form_action ); ?>"><?php _e( '&laquo; Back to regular view' ); ?></a></p>
 	<p><textarea cols="60" rows="10"><?php echo implode( ', ', array_keys( $all_subscriptions ) ); ?></textarea></p>
